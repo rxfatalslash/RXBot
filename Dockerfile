@@ -10,6 +10,11 @@ COPY bot/ .
 COPY init.sh .
 RUN chmod +x init.sh
 
+# Manejar errores en hosts Windows
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install dos2unix -y
+RUN dos2unix init.sh
+
 # Puerto de expuesto
 EXPOSE 3000
 
