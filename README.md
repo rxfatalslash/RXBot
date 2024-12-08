@@ -36,7 +36,7 @@ docker-compose up --build -d
 - ## Dockerfile:
 ```
 docker build -t dscbot .
-docker run -d --name dscbot -p 3000:3000 -e NODE_ENV=production dscbot
+docker run -d --name dscbot -p 3000:3000 -v ./log:/app/log -e NODE_ENV=production dscbot
 ```
 
 # 📋 License

@@ -64,6 +64,11 @@ module.exports = {
                     content: '❌ No puedes advertir a un bot',
                     ephemeral: true,
                 });
+            } else if (user.id === moderator.id) {
+                return await interaction.reply({
+                    content:'❌ No puedes advertirte a ti mismo',
+                    ephemeral: true
+                });
             }
 
             // Añade advertencia
