@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://i.imgur.com/HM8ZbVn.png" width="200px">
+    <img src="https://i.imgur.com/iiXUS2V.png" width="200px">
     
 ### Node.js Discord Bot
 
