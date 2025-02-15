@@ -81,11 +81,11 @@ module.exports = {
                     );
                 }
 
-                return interaction.reply({ embeds: [embed], ephemeral: true });
+                return interaction.reply({ embeds: [embed], flags: 64 });
             } else {
                 return interaction.reply({
                     content: `❌ El comando **/${specificCommand}** no existe. Utiliza el comando **/help** para ver la lista de comandos disponibles`,
-                    ephemeral: true
+                    flags: 64
                 });
             }
         }
@@ -115,6 +115,6 @@ module.exports = {
             }
         });
 
-        await interaction.reply({ embeds: [embed], ephemeral: true });
+        await interaction.reply({ embeds: [embed], flags: 64 });
     }
 }

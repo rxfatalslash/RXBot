@@ -26,7 +26,7 @@ module.exports = {
             if (!isValidUrl(url)) {
                 return await interaction.reply({
                     content: '⚠️ La URL no es válida',
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -48,7 +48,7 @@ module.exports = {
             // Envía el error
             await interaction.reply({
                 content: '⚠️ Error al acortar la URL',
-                ephemeral: true
+                flags: 64
             });
         }
     }

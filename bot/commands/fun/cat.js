@@ -28,7 +28,7 @@ module.exports = {
             if (!Array.isArray(data) || data.length === 0 || !data[0].url) {
                 return interaction.reply({
                     content: '⚠️ No se pudo obtener una imagen de gatito en este momento 😿',
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -43,7 +43,7 @@ module.exports = {
             if (!interaction.replied) {
                 await interaction.reply({
                     content: '⚠️ Hubo un error al obtener una imagen de gatito 😿. Por favor, inténtalo de nuevo más tarde',
-                    ephemeral: true
+                    flags: 64
                 });
             }
         }

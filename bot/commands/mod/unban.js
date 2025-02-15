@@ -30,7 +30,7 @@ module.exports = {
             if (!isBanned) {
                 return interaction.reply({
                     content: `❌ El usuario **${target.tag}** no está baneado`,
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -51,7 +51,7 @@ module.exports = {
             await interaction.reply({
                 content: `⚠️ ¿Estás seguro que deseas desbanear a **${target.tag}**?`,
                 components: [row],
-                ephemeral: true
+                flags: 64
             });
 
             const collectorFilter = i => i.user.id === interaction.user.id;
@@ -103,7 +103,7 @@ module.exports = {
 
             await interaction.reply({
                 content: `❌ Ocurrió un error al intentar desbanear a **${target.tag}**`,
-                ephemeral: true
+                flags: 64
             });
         }
     }

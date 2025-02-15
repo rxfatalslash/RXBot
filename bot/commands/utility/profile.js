@@ -1,6 +1,10 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const logger = require('../../tools/logger');
 
+function capitalizeFirstLetter(val) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('profile')
@@ -15,10 +19,10 @@ module.exports = {
 
             const presenceStatus = targetMember?.presence?.status || 'Unknown';
             const statusEmoji = {
-                Online: '🟢',
-                Idle: '🟠',
-                Dnd: '🔴',
-                Offline: '⚪'
+                'online': '🟢',
+                'idle': '🟠',
+                'dnd': '🔴',
+                'offline': '⚪'
             }[presenceStatus] || '❓';
 
             const roles = targetMember?.roles?.cache.filter(role => role.name !== '@everyone');
@@ -37,7 +41,7 @@ module.exports = {
                 .addFields(
                     { name: '🆔 Usuario', value: `${targetUser}`, inline: true },
                     { name: '📄 ID', value: targetUser.id, inline: true },
-                    { name: '🟢 Estado', value: `${statusEmoji} ${presenceStatus}`, inline: true },
+                    { name: '🟢 Estado', value: `${statusEmoji} ${capitalizeFirstLetter(presenceStatus)}`, inline: true },
                     {
                         name: '📜 Roles',
                         value: `${displayedRoles} ${hasMoreRoles}`,
@@ -52,12 +56,12 @@ module.exports = {
                 })
                 .setTimestamp();
 
-            await interaction.reply({ embeds: [embed], ephemeral: true });
+            await interaction.reply({ embeds: [embed], flags: 64 });
         } catch (error) {
             logger.error(`Error executing profile command: ${error.message}`);
             await interaction.reply({
                 content: '❌ No se pudo recuperar la información del perfil.',
-                ephemeral: true
+                flags: 64
             });
         }
     }

@@ -39,7 +39,7 @@ module.exports = {
                 if (!channel.isTextBased()) {
                     return interaction.reply({
                         content: '❌ El canal seleccionado no es válido para mensajes de texto',
-                        ephemeral: true
+                        flags: 64
                     });
                 }
 
@@ -56,7 +56,7 @@ module.exports = {
                     })
                     .setTimestamp();
 
-                return interaction.reply({ embeds: [embed], ephemeral: true }); // Envío respuesta correcta
+                return interaction.reply({ embeds: [embed], flags: 64 }); // Envío respuesta correcta
             } else if (subcommand === 'message') {
                 const message = interaction.options.getString('message');
 
@@ -78,7 +78,7 @@ module.exports = {
                     })
                     .setTimestamp();
 
-                return interaction.reply({ embeds: [embed], ephemeral: true });
+                return interaction.reply({ embeds: [embed], flags: 64 });
             }
         } catch (error) {
             logger.error(`Error executing setwelcome command on server ${guildId}: ${error.message}`);
@@ -93,7 +93,7 @@ module.exports = {
                 })
                 .setTimestamp();
 
-            return interaction.reply({ embeds: [embed], ephemeral: true }); // Envío respuesta de error
+            return interaction.reply({ embeds: [embed], flags: 64 }); // Envío respuesta de error
         }
     }
 }

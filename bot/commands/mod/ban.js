@@ -33,7 +33,7 @@ module.exports = {
         if (!guild.members.me.permissions.has(PermissionFlagsBits.BanMembers)) {
             return interaction.reply({
                 content: '❌ Permisos insuficientes',
-                ephemeral: true
+                flags: 64
             });
         }
 
@@ -42,7 +42,7 @@ module.exports = {
         if (!member) {
             return interaction.reply({
                 content: '❌ El usuario no se encuentra en el servidor',
-                ephemeral: true
+                flags: 64
             });
         }
 
@@ -50,7 +50,7 @@ module.exports = {
         if (!member.bannable) {
             return interaction.reply({
                 content: `❌ No se pudo banear a **${target.tag}**. Comprueba la jerarquía de roles`,
-                ephemeral: true
+                flags: 64
             });
         }
 
@@ -71,7 +71,7 @@ module.exports = {
         await interaction.reply({
             content: `⚠️ ¿Quieres banear al usuario **${target.username}** por **${reason}**?`,
             components: [row],
-            ephemeral: true
+            flags: 64
         });
 
         const collectorFilter = i => i.user.id === interaction.user.id;
@@ -122,7 +122,7 @@ module.exports = {
                 if (!interaction.replied && !interaction.deferred) {
                     await interaction.reply({
                         content: '❌ Ocurrió un error inesperado al procesar esta acción',
-                        ephemeral: true
+                        flags: 64
                     });
                 }
             }

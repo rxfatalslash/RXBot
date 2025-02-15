@@ -20,11 +20,11 @@ module.exports = {
             if (data.status !== 'success' || !data.message) {
                 return interaction.reply({
                     content: '⚠️ No se pudo obtener una imagen de perro en este momento 🐕‍🦺',
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
-            // Envía la imagen
+            // Evía la imagen
             await interaction.reply({
                 content: `**Guau** 🐶`,
                 files: [data.message]
@@ -35,7 +35,7 @@ module.exports = {
             if (!interaction.replied) {
                 await interaction.reply({
                     content: '⚠️ Hubo un error al obtener una imagen de perro 🐶. Por favor, inténtalo de nuevo más tarde',
-                    ephemeral: true
+                    flags: 64
                 });
             }
         }

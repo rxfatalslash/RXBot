@@ -21,7 +21,7 @@ module.exports = {
             logger.error(`Error in coin command: ${error.message}`);
             await interaction.reply({
                 content: '❌ Ocurrió un error al lanzar la moneda. Por favor, inténtalo nuevamente',
-                ephemeral: true
+                flags: 64
             });
         }
     }

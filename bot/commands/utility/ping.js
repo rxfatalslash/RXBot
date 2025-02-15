@@ -10,8 +10,8 @@ module.exports = {
             // REspuesta inicial
             const sent = await interaction.reply({
                 content: '🏓 Calculando latencias...',
-                ephemeral: true,
-                fetchReply: true
+                flags: 64,
+                withReply: true
             });
 
             // Cálculo de latencias
@@ -23,14 +23,14 @@ module.exports = {
             // Enviar la respuesta
             await interaction.editReply({
                 content: `🏓 **Pong!**\n🔧 **Latencia del Bot:** \`${botLatency}ms\`\n🌐 **Latencia de la API:** \`${apiLatency}ms\``,
-                ephemeral: true
+                flags: 64
             });
         } catch (error) {
             logger.error(`Error in ping command: ${error.message}`);
             if (!interaction.replied) {
                 await interaction.reply({
                     content: '❌ Ocurrió un error al calcular las latencias. Por favor, inténtalo nuevamente.',
-                    ephemeral: true
+                    flags: 64
                 });
             }
         }

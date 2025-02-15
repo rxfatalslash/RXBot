@@ -22,12 +22,12 @@ module.exports = {
 					if (interaction.replied || interaction.deferred) {
 						await interaction.followUp({
 							content: 'There was an error while executing this command!',
-							ephemeral: true,
+							flags: 64,
 						});
 					} else {
 						await interaction.reply({
 							content: 'There was an error while executing this command!',
-							ephemeral: true,
+							flags: 64,
 						});
 					}
 				}
@@ -37,7 +37,7 @@ module.exports = {
 			if (!interaction.replied) {
 				await interaction.reply({
 					content: 'An unexpected error occurred while processing your interaction',
-					ephemeral: true,
+					flags: 64,
 				});
 			}
 		}

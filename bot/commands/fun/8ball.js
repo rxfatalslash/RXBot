@@ -77,7 +77,7 @@ module.exports = {
             logger.error(`Error in 8ball command: ${error.message}`);
             await interaction.reply({
                 content: '❌ Ha ocurrido un error. Prueba más tarde',
-                ephemeral: true
+                flags: 64
             });
         }
     }

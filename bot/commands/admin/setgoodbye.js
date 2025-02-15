@@ -39,7 +39,7 @@ module.exports = {
                     if (!channel.isTextBased()) {
                         return interaction.reply({
                             content: '❌ El canal seleccionado no es válido para mensajes de texto',
-                            ephemeral: true
+                            flags: 64
                         });
                     }
 
@@ -56,7 +56,7 @@ module.exports = {
                         })
                         .setTimestamp();
 
-                    await interaction.reply({ embeds: [embed], ephemeral: true }); // Envío respuesta correcta
+                    await interaction.reply({ embeds: [embed], flags: 64 }); // Envío respuesta correcta
                 } else if (subcommand === 'message') {
                     const message = interaction.options.getString('message');
                     
@@ -78,7 +78,7 @@ module.exports = {
                         })
                         .setTimestamp();
 
-                    await interaction.reply({ embeds: [embed], ephemeral: true }); // Envío respuesta correcta
+                    await interaction.reply({ embeds: [embed], flags: 64 }); // Envío respuesta correcta
                 }
             } catch (error) {
                 logger.error(`Error executing setgoodbye command on server ${guildId}: ${error.message}`);
@@ -93,7 +93,7 @@ module.exports = {
                         iconURL: interaction.user.displayAvatarURL({ dynamic: true })
                     });
 
-                await interaction.reply({ embeds: [embed], ephemeral: true }); // Envío respuesta de error
+                await interaction.reply({ embeds: [embed], flags: 64 }); // Envío respuesta de error
             }
         }
 }

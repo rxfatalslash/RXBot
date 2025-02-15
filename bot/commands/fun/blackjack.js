@@ -84,7 +84,7 @@ module.exports = {
         if (games.has(userId)) {
             return interaction.reply({
                 content: '❌ Ya tienes un juego en curso. Usa los botones para continuar',
-                ephemeral: true
+                flags: 64
             });
         }
 
