@@ -39,7 +39,7 @@ module.exports = {
                     if (!channel.isTextBased()) {
                         return interaction.reply({
                             content: '❌ El canal seleccionado no es válido para mensajes de texto',
-                            ephemeral: true
+                            flags: 64
                         });
                     }
 
@@ -83,7 +83,7 @@ module.exports = {
 
                     return interaction.reply({
                         embeds: [embed],
-                        ephemeral: true
+                        flags: 64
                     });
                 }
             } catch (error) {
@@ -101,7 +101,7 @@ module.exports = {
 
                 return interaction.reply({
                     embeds: [embed],
-                    ephemeral: true
+                    flags: 64
                 })
             }
         }

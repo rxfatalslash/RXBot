@@ -57,7 +57,7 @@ module.exports = {
             logger.error(`Serverinfo command failed: ${error.message}`);
             await interaction.reply({
                 content: '❌ Error al recuperar la información del servidor',
-                ephemeral: true
+                flags: 64
             });
         }
     }

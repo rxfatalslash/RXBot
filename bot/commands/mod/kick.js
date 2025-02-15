@@ -31,7 +31,7 @@ module.exports = {
         if (!guild.members.me.permissions.has(PermissionFlagsBits.KickMembers)) {
             return interaction.reply({
                 content: '❌ Permisos insuficientes',
-                ephemeral: true
+                flags: 64
             });
         }
 
@@ -40,7 +40,7 @@ module.exports = {
         if (!member) {
             return interaction.reply({
                 content: '❌ No se pudo encontrar al usuario en este servidor',
-                ephemeral: true
+                flags: 64
             });
         }
 
@@ -48,7 +48,7 @@ module.exports = {
         if (!member.kickable) {
             return interaction.reply({
                 content: `❌ No se pudo expulsar a **${target.tag}**. Comprueba la jerarquía de roles`,
-                ephemeral: true
+                flags: 64
             });
         }
 
@@ -69,7 +69,7 @@ module.exports = {
         await interaction.reply({
             content: `⚠️ ¿Quieres expulsar al usuario **${target.username}** por **${reason}**?`,
             components: [row],
-            ephemeral: true
+            flags: 64
         });
 
         const collectorFilter = i => i.user.id === interaction.user.id;

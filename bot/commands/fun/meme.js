@@ -20,7 +20,7 @@ module.exports = {
             if (!postData || !postData.data || !postData.data.children[0]) {
                 return interaction.reply({
                     content: '⚠️ No se pudo obtener un meme en este momento',
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -30,7 +30,7 @@ module.exports = {
             if (!meme || !meme.url || !meme.title) {
                 return interaction.reply({
                     content: '⚠️ No se pudo obtener ningún meme válido en este momento',
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -43,7 +43,7 @@ module.exports = {
             if (!interaction.replied) {
                 await interaction.reply({
                     content: '⚠️ Hubo un error al obtener un meme 😞',
-                    ephemeral: true
+                    flags: 64
                 });
             }
         }

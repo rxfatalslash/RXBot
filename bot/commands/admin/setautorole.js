@@ -21,7 +21,7 @@ module.exports = {
             if (!guild) {
                 return interaction.reply({
                     content: '⚠️ Este comando solo puede ser usado dentro de un servidor',
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -29,7 +29,7 @@ module.exports = {
             if (!botMember) {
                 return interaction.reply({
                     content: '⚠️ No se pudieron verificar los privilegios del bot',
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -37,7 +37,7 @@ module.exports = {
             if (botMember.roles.highest.position <= role.position) {
                 return interaction.reply({
                     content: `⚠️ No se puede asignar el rol **${role.name}** si el bot tiene menos privilegios`,
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -71,7 +71,7 @@ module.exports = {
                 })
                 .setTimestamp();
 
-            return interaction.reply({ embeds: [embed], ephemeral: true });
+            return interaction.reply({ embeds: [embed], flags: 64 });
         }
     }
 }

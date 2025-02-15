@@ -174,7 +174,7 @@ module.exports = {
             }
         } catch (error) {
             logger.error(`Error executing role command: ${error.message}`);
-            return interaction.reply({ content: '❌ Ocurrió un error al procesar el comando.', ephemeral: true });
+            return interaction.reply({ content: '❌ Ocurrió un error al procesar el comando.', flags: 64 });
         }
     }
 };

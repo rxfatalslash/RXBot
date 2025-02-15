@@ -42,7 +42,7 @@ module.exports = {
             if (!botMember.permissions.has(PermissionFlagsBits.ManageNicknames)) {
                 return interaction.reply({
                     content: '❌ El bot no tiene permisos para gestionar nicknames',
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -50,7 +50,7 @@ module.exports = {
             if (botMember.roles.highest.position <= target.roles.highest.position) {
                 return interaction.reply({
                     content: `❌ No se puede cambiar el nickname de **${target.user.username}** porque tiene un rol superior o igual al bot`,
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -58,7 +58,7 @@ module.exports = {
             if (target.id === interaction.guild.ownerId) {
                 await interaction.reply({
                     content: '❌ No se puede cambiar el nickname del dueño del servidor',
-                    ephemeral: true
+                    flags: 64
                 });
                 return;
             }
@@ -111,7 +111,7 @@ module.exports = {
                 })
                 .setTimestamp();
 
-            return interaction.reply({ embeds: [embed], ephemeral: true });
+            return interaction.reply({ embeds: [embed], flags: 64 });
         }
     }
 };

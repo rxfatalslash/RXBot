@@ -33,12 +33,12 @@ module.exports = {
                 .setTimestamp();
 
             // Enviar la respuesta
-            await interaction.reply({ embeds: [embed], ephemeral: false });
+            await interaction.reply({ embeds: [embed], flags: 64 });
         } catch (error) {
             logger.error(`Error in avatar command: ${error.message}`);
             await interaction.reply({
                 content: '❌ Ocurrió un error al intentar obtener el avatar del usuario.',
-                ephemeral: true
+                flags: 64
             });
         }
     }

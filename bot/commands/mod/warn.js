@@ -62,12 +62,7 @@ module.exports = {
             if (user.bot) {
                 return await interaction.reply({
                     content: '❌ No puedes advertir a un bot',
-                    ephemeral: true,
-                });
-            } else if (user.id === moderator.id) {
-                return await interaction.reply({
-                    content:'❌ No puedes advertirte a ti mismo',
-                    ephemeral: true
+                    flags: 64,
                 });
             }
 
@@ -116,7 +111,7 @@ module.exports = {
             if (!warnings[user.id] || warnings[user.id].length === 0) {
                 return await interaction.reply({
                     content: '❌ Este usuario no tiene advertencias registradas.',
-                    ephemeral: true,
+                    flags: 64,
                 });
             }
 

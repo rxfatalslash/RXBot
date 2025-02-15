@@ -69,7 +69,7 @@ module.exports = {
                 logger.error(`Failed to fetch member: ${error.message}`);
                 return interaction.reply({
                     content: `❌ No se pudo encontrar al usuario en el servidor`,
-                    ephemeral: true
+                    flags: 64
                 });
             }
 
@@ -102,13 +102,13 @@ module.exports = {
                 .setTimestamp();
 
             // Enviar la respuesta
-            await interaction.reply({ embeds: [embed], ephemeral: true });
+            await interaction.reply({ embeds: [embed], flags: 64 });
         } catch (error) {
             logger.error(`Unexpected error in checkperms command: ${error.message}`);
             if (!interaction.replied) {
                 await interaction.reply({
                     content: `❌ Ha ocurrido un error inesperado`,
-                    ephemeral: true
+                    flags: 64
                 });
             }
         }
