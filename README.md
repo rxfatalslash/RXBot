@@ -15,7 +15,7 @@ A simple Discord Bot made with Node.js
 Clone the repository.
 ```
 git clone git@github.com:rxfatalslash/dscbot.git
-cd dscbot/
+cd RXBot/
 ```
 
 # 🖱️ Use
@@ -35,8 +35,8 @@ docker-compose up --build -d
 ```
 - ## Dockerfile:
 ```
-docker build -t dscbot .
-docker run -d --name dscbot -p 3000:3000 -v ./log:/app/log -e NODE_ENV=production dscbot
+docker build -t rxbot .
+docker run -d --name rxbot -p 3000:3000 -v ./log:/app/log -e NODE_ENV=production dscbot
 ```
 
 # 📋 License
