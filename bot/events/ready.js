@@ -9,8 +9,8 @@ module.exports = {
         // console.log(`Ready! Logged in as ${client.user.tag}`);
 
         // Configuración bot
-        client.user.setUsername('RXBot');
-        // client.user.setAvatar('https://i.imgur.com/iiXUS2V.png');
-        client.user.setActivity('rxfatalslash.github.io | /help', { type: ActivityType.Custom });
+        // client.user.setUsername('BOT_USERNAME');
+        // client.user.setAvatar('PATH_TO_AVATAR');
+        // client.user.setActivity('CUSTOM_TEXT, { type: ActivityType.Custom });
     },
 };
