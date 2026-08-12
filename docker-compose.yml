@@ -1,10 +1,11 @@
-version: '3.9'
 services:
-  app:
+  rxbot:
     build: .
-    ports:
-      - "3000:3000"
+    container_name: rxbot
     volumes:
-      - ./log:/app/log
+      - ./log:/app/log # Logs persistentes
+    env_file:
+      - ./bot/.env
     environment:
       NODE_ENV: production
+    restart: unless-stopped

@@ -1,4 +1,19 @@
-bot/node_modules
-bot/package-lock.json
-bot/yarn.lock
-log
+# Dependencias
+bot/node_modules/
+
+# Environment
+.env
+.env.*
+
+# Configuración
+/bot/config.json
+
+# Logs
+log/
+bot/log/
+*.log
+
+# General
+.DS_Store
+Thumbs.db
+.vscode/

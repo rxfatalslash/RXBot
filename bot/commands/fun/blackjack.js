@@ -1,5 +1,4 @@
 const { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } = require('discord.js');
-const logger = require('../../tools/logger');
 
 // Mapa para rastrear las partidas activas
 const games = new Map();

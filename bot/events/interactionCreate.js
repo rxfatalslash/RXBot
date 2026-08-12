@@ -8,7 +8,7 @@ module.exports = {
 
 		try {
 			if (interaction.isChatInputCommand()) {
-				const command = interaction.client.commands.get(interaction.commandName);
+				const command = client.commands.get(interaction.commandName);
 
 				if (!command) {
 					logger.error(`No command matching ${interaction.commandName} was found`);

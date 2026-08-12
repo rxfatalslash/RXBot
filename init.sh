@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Commands deployment
-echo "Deploying commands..."
-node deploy-commands.js
+set -eu
 
 # Bot initialization
 echo "Initializing bot..."
-node index.js
+exec node index.js

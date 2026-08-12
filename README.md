@@ -14,7 +14,7 @@ A simple Discord Bot made with Node.js
 # 🗳️ Installation
 Clone the repository.
 ```
-git clone git@github.com:rxfatalslash/dscbot.git
+git clone git@github.com:rxfatalslash/RXBot.git
 cd RXBot/
 ```
 

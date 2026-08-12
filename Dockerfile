@@ -1,22 +1,19 @@
-FROM node:current
+FROM node:lts-bookworm-slim
 WORKDIR /app
 
 # Instalación de dependencias
-COPY bot/package*.json ./
-RUN npm install --only=production
+COPY bot/package.json  bot/package-lock.json ./
+RUN npm ci --omit=dev
+
 COPY bot/ .
 
 # Script de inicio
-COPY init.sh .
-RUN chmod +x init.sh
+COPY init.sh ./
+RUN chmod +x init.sh \
+    && mkdir -p /app/log \
+    && chown -R node:node /app
 
-# Manejar errores en hosts Windows
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install dos2unix -y
-RUN dos2unix init.sh
-
-# Puerto de expuesto
-EXPOSE 3000
+USER node
 
 # Inicio de la aplicación
 ENTRYPOINT ["./init.sh"]
